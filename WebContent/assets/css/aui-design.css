@@ -1,0 +1,1332 @@
+/* =========================================================================================================================================
+        BUTTONS
+========================================================================================================================================= */
+
+
+/* Buttons in table bug for app header messages examples */
+table.aui a.aui-button.aui-button-primary {
+    height: 30px;
+}
+
+/* Header Split button problems hackery */
+.aui-buttons > .aui-button-primary.aui-button-split-main {
+    padding-top: 4px;
+}
+.aui-button-split-main {
+    margin-right: 0 !important;
+}
+.aui-buttons .aui-button-split-more {
+    margin-left: 0 !important;
+    padding-right: 18px !important;
+}
+.aui-header .aui-button-primary.aui-dropdown2-trigger.aui-button-split-more.active {
+    top: 0px;
+    padding-right: 23px !important;
+}
+/* End Split button */
+
+button .aui-icon {
+    color: #707070;
+}
+
+/* Compact buttons */
+/* AUI-1648 */
+.aui-button.aui-button-compact, .aui-button.aui-button-compact:visited {
+    padding: 2px 5px;
+}
+/*AUI-1649*/
+.aui-button.aui-button-compact.aui-dropdown2-trigger:first-child.active, .aui-button.aui-button-compact.aui-dropdown2-trigger.active {
+    padding-bottom: 3px;
+}
+/* bug with compact buttons needing the trigger caret with the more icon */
+.aui-button.aui-button-compact.aui-dropdown2-trigger:after {
+    display: none;
+}
+.aui-button.aui-button-compact.aui-dropdown2-trigger {
+    padding-right: 4px !important;
+}
+
+.example-good, .example-bad {
+    margin-right: 10px;
+}
+.example-bad {
+    margin-bottom: 20px;
+}
+/* =========================================================================================================================================
+        COLOUR PALETTE
+========================================================================================================================================= */
+
+.colour-palette {
+    padding: 5px 45px;
+}
+
+.atlassian-blue {
+    background-color: #205081;
+}
+
+.focus-blue {
+    background-color: #3b73af;
+}
+
+.link-blue {
+    background-color: #3b73af;
+}
+
+.page-white {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.light-gray {
+    background-color: #f5f5f5;
+}
+
+.border-gray {
+    background-color: #ccc;
+}
+
+.medium-gray {
+    background-color: #707070;
+}
+
+.dark-gray {
+    background-color: #333;
+}
+
+.primary-highlight {
+    background-color: #f5f5f5;
+}
+
+.secondary-highlight {
+    background-color: #e9e9e9;
+}
+
+/* =========================================================================================================================================
+    COLOURS
+========================================================================================================================================= */
+
+.colours-section {
+    float: left;
+    margin: 10px 10px 10px 0;
+    width: 100px;
+}
+.colours-75-opacity {
+	opacity: 0.75;
+}
+.colours-50-opacity {
+	opacity: 0.5;
+}
+.colours-derivative {
+    float: left;
+    margin: 10px 10px 0 0;
+    width: 100px;
+}
+.colours-derivative:first-child {
+    margin: 10px 10px 0 110px;
+}
+.colours {
+    border-radius: 3px;
+    height: 80px;
+    width: 80px;
+}
+.colours-small {
+    border-radius: 3px;
+    height: 40px;
+    width: 80px;
+}
+.colours, .colours-small {
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+.colours > span {
+	top: 32px;
+	position: relative;
+}
+.colours-small > span {
+	top: 12px;
+	position: relative;
+}
+
+/* Primary */
+
+.colours-blue {
+    background: #205081;
+}
+.colours-bright-blue-1 {
+    background: #3b73af;
+}
+.colours-charcoal {
+    background: #333;
+}
+.colours-light-gray {
+    background: #f5f5f5;
+}
+.colours-pale-blue {
+    background: #ebf2f9;
+}
+.colours-medium-gray {
+    background: #707070;
+}
+.colours-green {
+    background: #14892c;
+}
+.colours-yellow {
+    background: #f6c342;
+}
+.colours-red {
+    background: #d04437;
+}
+
+/* Secondary */
+
+.colours-gray {
+    background: #999;
+}
+.colours-ash-gray {
+    background: #ccc;
+}
+.colours-silver {
+    background: #e9e9e9;
+}
+.colours-brown {
+    background: #815b3a;
+}
+.colours-orange {
+    background: #ea632b;
+}
+.colours-tan {
+    background: #f1a257;
+}
+.colours-light-brown {
+    background: #d39c3f;
+}
+.colours-bright-blue-2 {
+    background: #3b7fc4;
+}
+.colours-bright-blue-3 {
+    background: #1a8cff;
+}
+.colours-slate {
+    background: #4a6785;
+}
+.colours-lime-green {
+    background: #8eb021;
+}
+.colours-mauve {
+    background: #ac707a;
+}
+.colours-violet {
+    background: #654982;
+}
+.colours-emerald {
+    background: #7bc1a1;
+}
+.colours-bright-pink {
+    background: #f15c75;
+}
+.colours-pink {
+    background: #f691b2;
+}
+
+/* Derivatives */
+
+.colours-medium-blue {
+    background: #ccd9ea;
+}
+
+.colours-half-green { /* 50% of #14892c */
+    background: #89c495;
+}
+.colours-pale-green { /* 5% of #14892c */
+    background: #f3f9f4;
+    border: 1px solid #ccc
+}
+
+.colours-half-yellow { /* 50% of #ffd351 */
+    background: #ffe9a8;
+}
+.colours-pale-yellow { /* 5% of #ffd351 */
+    background: #fffdf6;
+    border: 1px solid #ccc;
+}
+
+.colours-dark-brown {
+    background: #594300;
+}
+
+.colours-half-slate { /* 50% of #4a6785 */
+    background: #a4b3c2;
+}
+.colours-pale-slate { /* 5% of #4a6785 */
+    background: #f6f7f9;
+    border: 1px solid #ccc;
+}
+
+
+/* =========================================================================================================================================
+    EXAMPLES
+========================================================================================================================================= */
+
+.example-container {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 20px 0;
+    padding: 20px;
+}
+.example-container.footer {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    padding: 10px;
+}
+.example-container-border {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.example-container.gray {
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+.example-container > .aui-page-panel {
+    border: none;
+}
+.aui-page-focused .aui-page-panel-content h2 {
+     border-bottom: 1px solid #ccc;
+     margin-bottom: 20px;
+     padding-bottom: 20px;
+}
+.aui-page-focused .aui-page-panel-content .buttons-container {
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+.margin-fix {
+    margin-top: 50px;
+    min-height: auto;
+}
+.aui-page-header-actions .aui-progress-tracker {
+    width: 400px;
+}
+.inverted-background {
+    background: #f5f5f5;
+}
+.aui-item.example-inline-item {
+    width: 230px;
+}
+
+.examples-section {
+    float: left;
+    margin: 0 20px 10px 0;
+    width: 230px;
+}
+.example-screenshots {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    height: 200px;
+    width: 230px;
+}
+.example-screenshots:last-child {
+    margin: 0 0 10px 0;
+}
+.example-screenshots:hover {
+    border-color: #3b73af;
+}
+/* hacks for horizontal nav display */
+.example-container > .aui-navgroup-horizontal {
+    height: 38px;
+}
+.example-container > .aui-navgroup-horizontal > .aui-navgroup-inner {
+    max-width: 760px;
+}
+/* hack for footer display */
+.example-container.footer > #footer > section.footer-body {
+    max-width: 780px;
+}
+
+
+/* Focused task */
+.example-login {
+    background-image: url('../images/patterns/focused-task/example-login.png');
+}
+.example-form {
+    background-image: url('../images/patterns/focused-task/example-form.png');
+}
+.example-progress {
+    background-image: url('../images/patterns/focused-task/example-progress.png');
+}
+
+/* Page layouts */
+.example-fluid {
+    background-image: url('../images/layouts/example-layout-fluid.png');
+}
+.example-fixed-width {
+    background-image: url('../images/layouts/example-layout-fixed.png');
+}
+.example-hybrid {
+    background-image: url('../images/layouts/example-layout-hybrid.png');
+}
+.example-content {
+    background-image: url('../images/layouts/example-layout-contentonly.png');
+}
+.example-nav-content {
+    background-image: url('../images/layouts/example-layout-navcontent.png');
+}
+.example-content-sidebar {
+    background-image: url('../images/layouts/example-layout-contentsidebar.png');
+}
+.example-nav-content-sidebar {
+    background-image: url('../images/layouts/example-layout-navcontentsidebar.png');
+}
+.example-focused-task {
+    background-image: url('../images/layouts/example-layout-focusedtask.png');
+}
+
+.example-container .aui-progress-tracker-step {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table-cell;
+    padding: 0 10px;
+    max-width: 140px;
+    min-width: 80px;
+    text-align: center;
+}
+.example-container .inverted {
+    background: #f5f5f5;
+}
+
+ol.aui-progress-tracker {
+    padding: 10px 0;
+}
+
+.example-thumbs {
+    margin-top: 15px;
+}
+.example-thumbs img {
+    width: 230px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+.example-thumbs img:hover {
+    border-color: #3b73af;
+}
+.example-thumbs:last-child {
+    margin-right: 0;
+}
+
+.fancybox-overlay {
+    background: rgba(0,0,0,0.5);
+}
+
+/* =========================================================================================================================================
+    Override for the special tooltip with title in tooltips
+========================================================================================================================================= */
+
+.tipsy {
+    z-index: 1000000001;
+}
+
+.tipsy b {
+  color: #ccc;
+  display: block;
+  font-weight: normal;
+}
+
+.tipsy-inner {
+  text-align: left;
+}
+
+/* =========================================================================================================================================
+    LANGUAGE
+========================================================================================================================================= */
+
+.example-good .aui-icon-small:before {
+    font-size: 12px;
+    margin-top: -6px;
+    padding-left: 2px;
+}
+.example-good {
+    color: #14892c;
+}
+.example-bad {
+    color: #d04437;
+}
+.language-example-content {
+    margin: 10px 0 20px 20px;
+}
+.language-example-content-last {
+    margin: 10px 0 0 20px;
+}
+.language > .aui-item > .example-container {
+    margin: 0;
+}
+.aui-group.language {
+    margin: 20px 0 40px 0;
+}
+
+/* =========================================================================================================================================
+    NATIVE APPS
+========================================================================================================================================= */
+
+.app-example-image {
+    margin: 20px auto;
+    display: block;
+}
+.mobile-example-image {
+    width: 100%;
+    max-width: 350px;
+}
+
+.guidelines-table td .tick {
+    background: center center no-repeat;
+    background-image: url('https://d3oaxc4q5k2d6q.cloudfront.net/m/2d3c993b256a/img/icons/svg/icon-approved.svg?5dd004fe7d4c');
+    background-size: 16px;
+    color: #14892c;
+    display: inline-block;
+    vertical-align: bottom;
+    height: 21px;
+    width: 16px;
+}
+
+/* =========================================================================================================================================
+        HEADER
+========================================================================================================================================= */
+
+.aui-header .aui-header-logo-adg a .aui-header-logo-device {
+    background-image: url('../images/logo/logo-adg.png');
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: block;
+    float: left;
+    height: 24px;
+    padding: 8px 0;
+    text-indent: -9999px;
+    text-align: left;
+    width: 147px;
+}
+.aui-icon-container.avatar-round > img {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+}
+.aui-icon-container.user-avatar-round > img {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+/* App Switcher - some of these styles should go into AUI to fix - https://ecosystem.atlassian.net/browse/AUI-1656*/
+.app-switcher-trigger {
+    box-sizing: border-box;
+    float: left;
+    cursor: pointer;
+}
+#flatpack-app-switcher-trigger {
+    padding-right: 10px !important;
+}
+#flatpack-app-switcher-trigger:after {
+    border: 0;
+}
+
+/* =========================================================================================================================================
+        HOME PAGE
+========================================================================================================================================= */
+
+.aui-page-header-hero .aui-lozenge {
+    margin-left: 10px;
+}
+
+.aui-page-header-hero span.aui-lozenge {
+    position: relative;
+    top: -4px;
+}
+
+.vision {
+    font-weight: normal;
+}
+
+.no-bullets {
+    list-style: none;
+    padding-left: 0;
+}
+
+.adg-principle-image, .adg-section-image {
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.aui-group.feature-list > .aui-item {
+    padding-right: 25px;
+}
+
+.aui-group.feature-list > .aui-item+.aui-item {
+    padding: 0 12px;
+}
+
+.aui-group.feature-list > .aui-item+.aui-item+.aui-item {
+    padding: 0 0 0 25px;
+}
+
+.home-page-hero {
+    background: #fff;
+}
+/* =========================================================================================================================================
+    ICON FONT
+========================================================================================================================================= */
+
+
+.aui-icon-table {
+    margin-bottom: 10px;
+}
+
+#icon-font-table {
+    margin-top: 20px;
+}
+
+.aui-icon-table .aui-icon {
+    color: #707070;
+}
+
+.icon-size-examples {
+    width: 300px;
+    margin: 0 40px 0 0;
+}
+
+.icon-size-examples .aui-icon {
+    color: #707070;
+}
+.icon-size-examples-small {
+    display: inline-block;
+    margin-top: 20px;
+    width: 50%;
+}
+.icon-size-examples-large {
+    display: inline-block;
+}
+.icon-size-examples-large .aui-icon-large {
+    margin-top: -8px;
+}
+
+/* =========================================================================================================================================
+        ICONS
+========================================================================================================================================= */
+
+.aui-style-default .icon-jira-bug {
+  background-image: url('../images/issues/icon-jira-bug.png');
+  background-size: 16px;
+}
+
+.aui-style-default .icon-jira-epic {
+  background-image: url('../images/issues/icon-jira-epic.png');
+  background-size: 16px;
+}
+
+.aui-style-default .icon-jira-task {
+  background-image: url('../images/issues/icon-jira-requirement.png');
+  background-size: 16px;
+}
+
+
+/* =========================================================================================================================================
+    LAYOUT
+========================================================================================================================================= */
+
+.aui-page-panel {
+    min-height: 370px;
+}
+hr {
+    color: #ccc;
+    background-color: #ccc;
+    border: none;
+    height: 1px;
+    margin: 40px 0;
+}
+hr.changelog {
+    color: #ccc;
+    background-color: #ccc;
+    border: none;
+    height: 1px;
+    margin: 30px 0 -10px 0;
+}
+.tabs-pane {
+    padding-top: 20px;
+}
+.aui-group-highlighted .aui-item p {
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.lockup-item {
+    float: left;
+    margin-right: 40px
+}
+.lockup-item:last-child {
+    margin-top: -5px;
+}
+.lockup-item > img {
+    width: 150px;
+}
+.aui-toolbar2 {
+    margin-top: -10px;
+}
+li p {
+    margin: 0;
+}
+.aui-inline-dialog .contents {
+    padding: 20px;
+}
+.type-element {
+    white-space: nowrap;
+}
+.aui-message {
+    margin-top: 0;
+}
+.placeholder-box {
+    background: #f5f5f5;
+    padding: 20px;
+}
+ul ul, ol ol {
+    margin: 0;
+}
+.example-container.narrow {
+    max-width: 900px;
+}
+table.aui .aui-icon {
+    color: #707070;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.aui-group > .aui-item > h4:first-child {
+    margin-top: 0;
+}
+.aui-group.example-typography {
+    margin-top: 20px;
+}
+
+.img-border {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.changelog-version {
+    font-size: 14px;
+}
+.changelog-version:before {
+    color: #ccc;
+    content: "鈥�";
+    padding: 0 10px 0 5px;
+}
+
+.pagination-demo {
+    background: white;
+}
+
+/* Zero Clipboard */
+
+.zeroclipboard-is-hover {
+    opacity: 0.8;
+}
+.js-copy-clipboard {
+    cursor: pointer;
+}
+
+.feedback-container {
+    position: fixed;
+    margin: 0 auto;
+    top: -40px;
+    left: 0;
+    right: 0;
+}
+
+.feedback-message {
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    background: #14892c;
+    color: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 6px 10px;
+
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: message-fade;
+    animation-name: message-fade;
+    z-index: 1000000000; /* zero clipboard wants to have the highest position. This needs to be higher when animating */
+}
+
+@-webkit-keyframes message-fade {
+  0% {
+    -webkit-transform: translateY(-82px);
+    transform: translateY(-82px);
+  }
+  15% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  85% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  100% {
+    -webkit-transform: translateY(-82px);
+    transform: translateY(-82px);
+  }
+}
+
+@keyframes message-fade {
+  0% {
+    -webkit-transform: translateY(-82px);
+    -ms-transform: translateY(-82px);
+    transform: translateY(-82px);
+  }
+  15% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  85% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  100% {
+    -webkit-transform: translateY(-82px);
+    -ms-transform: translateY(-82px);
+    transform: translateY(-82px);
+  }
+}
+/* =========================================================================================================================================
+        LOZENGES
+========================================================================================================================================= */
+
+.aui-lozenge-code {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    color: #333;
+    font-family: monospace;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 12px;
+    padding: 4px;
+    margin: 0px 3px;
+}
+.aui-lozenge-inline {
+    margin: 5px 0 0 10px;
+    position: absolute;
+}
+.new-feature-lozenge {
+    margin-left: 10px;
+    position: relative;
+    top: -1px;
+}
+
+.default-lozenge {
+    background-color: #ccc;
+    color: #333;
+}
+
+.new-lozenge {
+    background-color: #14892C;
+    color: #fff;
+}
+
+.error-lozenge {
+    background-color: #d04437;
+    color: #fff;
+}
+
+.current-lozenge {
+    background-color: #ffd351;
+    color: #594300;
+}
+
+.done-lozenge {
+    background-color: #4a6785;
+    color: #fff;
+}
+
+.moved-lozenge {
+    background-color: #815b3a;
+    color: #fff;
+}
+
+/* =========================================================================================================================================
+    PROGRESS INDICATORS
+========================================================================================================================================= */
+
+.aui-progress-bar-container {
+    margin: 10px 0;
+}
+.example-container .demo-spinner {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+}
+.demo-spinner > .aui-group > .aui-item > h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.demo-spinner .small-spinner,
+.demo-spinner .medium-spinner,
+.demo-spinner .large-spinner {
+    padding-bottom: 40px;
+}
+
+/* =========================================================================================================================================
+    FEATURE DISCOVERY
+========================================================================================================================================= */
+
+.feature-discovery-example {
+    height: 212px;
+} 
+
+.multi-step-trigger {
+    display: inline-block;
+    float: right;
+    line-height: 30px;
+}
+
+span.multi-step-trigger {
+    color: #707070;
+}
+
+.arrow-next {
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #3b73af;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: 5px;
+    margin-left: 5px;
+}
+
+/* =========================================================================================================================================
+    SHOW MORE
+========================================================================================================================================= */
+#reveal-text-content {
+    min-height: 1.5em;
+}
+
+
+/* =========================================================================================================================================
+    TABLES
+========================================================================================================================================= */
+
+/* make aui buttons work in a table */
+
+table.aui > tbody > tr > td.adg-actions {
+    padding-bottom: 0;
+}
+table.aui .adg-actions .aui-button.aui-dropdown2-trigger {
+    padding-right: 21px !important;
+}
+table.aui .adg-actions .aui-button, table.aui a.aui-button, table.aui.aui-button:visited {
+    padding:  2px 8px 2px 8px;
+    line-height: inherit;
+    height: inherit;
+    margin-top: -3px;
+    margin-left: 5px;
+    height: 26px;
+}
+table.aui .adg-actions .aui-button.aui-button.aui-dropdown2-trigger:after {
+    top: 9px;
+}
+table.aui .adg-actions .aui-button.aui-dropdown2-trigger:after {
+    margin-left: -16px;
+}
+table.aui .adg-actions .aui-button.aui-dropdown2-trigger:first-child.active, table.aui .adg-actions .aui-button.aui-dropdown2-trigger.active {
+    padding-bottom: 3px;
+}
+table.aui td.adg-actions > .aui-icon.aui-icon-small {
+    vertical-align: -4px;
+    margin-right: 5px;
+}
+
+/* make hoverable actions work in a table */
+table.aui .adg-actions .adg-on-hover > div.inline-actions {
+    display: inline-block;
+}
+table.aui .adg-actions .adg-on-hover > div.inline-actions > a, table.aui .adg-on-hover > div.inline-actions > button {
+    display: none;
+}
+table.aui tr:hover .adg-on-hover > div.inline-actions > a, table.aui tr:hover .adg-on-hover > div.inline-actions > button {
+    display: inline-block;
+}
+
+/* give table rows a hover state */
+
+.visible-icon {
+    display: inline-block;   
+}
+
+table.aui .adg-actions .aui-button.aui-dropdown2-trigger-arrowless, .aui-button.aui-button-compact.aui-dropdown2-trigger-arrowless {
+	padding-left: 8px !important;
+	padding-right: 8px !important;
+}
+
+.aui-button.aui-dropdown2-trigger-arrowless:after {
+	display: none;
+}
+
+/* AUI-1647 - DELETE THIS BUG, NEW SOLUTION BELOW: */
+table.aui > tbody > tr > td.aui-compact-button-column {
+    padding: 3px 10px;
+    line-height: 28px;
+    vertical-align: top;
+}
+table .aui-button-compact {
+    margin-top: 1px;
+    vertical-align: top;
+}
+
+/* make hoverable actions work in a table */
+table.aui tr > td > div.inline-actions > a.aui-dropdown2-trigger, table.aui tr > td > div.inline-actions > button.aui-dropdown2-trigger {
+    display: none;
+}
+table.aui tr:hover > td > div.inline-actions > a.aui-dropdown2-trigger, table.aui tr:hover > td > div.inline-actions > button.aui-dropdown2-trigger {
+    display: inline-block;
+}
+/* end compact buttons in tables */
+
+
+.home p {
+    font-size: 16px;
+    line-height: 24px;
+}
+.aui-header .aui-nav>li, .aui-header p {
+    list-style: none;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.aui-page-header-hero .aui-page-header-main h1, .aui-page-header-hero .aui-page-header-main h2 {
+    font-size: 36px;
+}
+.aui-page-header-hero .aui-page-header-main p {
+    color: #707070;
+    font-size: 20px;
+}
+.aui-page-header-main {
+    width: 600px;
+}
+.aui-page-panel.principles {
+    border: none;
+}
+.aui-page-panel.principles > .aui-page-panel-inner {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.aui-page-panel.principles h1, .aui-page-panel.sections h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+.aui-page-panel.principles h1 {
+    margin: 20px 0 40px 0;
+}
+.aui-group.principles-list {
+    margin: 40px 0;
+}
+.aui-group.principles-list > .aui-item > h2 {
+    margin-top: 0;
+}
+.aui-page-panel.sections {
+    border-bottom: 1px solid #ccc;
+    border-top: none;
+    margin: 0;
+}
+.header-version {
+    font-size: 14px;
+}
+footer {
+    background: #f5f5f5;
+}
+h1 {
+    font-size: 32px;
+    line-height: 40px;
+}
+.aui-page-header-main > h1 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+table h1 {
+    font-size: 24px;
+    line-height: 40px;
+}
+.aui-item.api-docs a {
+    margin-top: 10px;
+}
+.aui-item.api-docs {
+    text-align: right;
+}
+.license-agreement > li {
+    margin-top: 20px;
+}
+.aui-page-panel:first-child {
+    border-top: none;
+}
+.beta-status {
+    position: relative;
+    top: -3px;
+    margin-left: 10px;
+}
+
+/* personas */
+.quote-line {
+    color: #707070;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.persona-image {
+    width: 250px;
+    padding-top: 30px;
+}
+.aui-avatar-personas, .aui-avatar-personas .aui-avatar-inner {
+    width: 220px;
+    height: 220px;
+}
+.aui-avatar-personas.aui-avatar-project {
+    box-shadow: none;
+}
+.aui-avatar-personas.aui-avatar-project:before {
+    border: none;
+}
+.persona-container {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+}
+.persona-container:last-child {
+    border-bottom: none;
+}
+
+
+/* Nav stalking */
+.adg-sidebar .aui-navgroup-vertical .aui-nav, .adg-sidebar .aui-navgroup-vertical .aui-nav-heading {
+    border-top: none;
+    padding: 6px 0 4px;
+}
+.adg-sidebar .aui-navgroup-vertical .aui-nav >li>a:focus, .adg-sidebar .aui-navgroup-vertical .aui-nav >li>a:hover, .adg-sidebar .aui-nav-vertical>li>a:focus, .adg-sidebar .aui-nav-vertical>li>a:hover {
+    text-decoration: underline;
+    background: #fff;
+}
+.adg-sidebar .aui-navgroup-vertical .aui-nav>li>a, .aui-nav-vertical>li>a {
+    padding: 7px 0;
+}
+.aui-page-panel-nav.adg-sidebar {
+    border-right: none;
+    width: 180px;
+}
+.aui-page-panel {
+    margin-top: 0;
+}
+.stalking-position {
+    position: absolute;
+}
+
+
+/* Responsive widths */
+.aui-page-focused .aui-page-header,.aui-page-focused .aui-page-panel,.aui-page-focused #footer .footer-body,.aui-page-fixed .aui-header-inner,.aui-page-fixed .aui-page-header-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-page-panel-inner,.aui-page-fixed #footer .footer-body,.aui-page-hybrid .aui-page-header,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-hybrid .aui-page-panel-inner,.aui-page-hybrid #footer .footer-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1020px
+}
+.aui-page-fixed .aui-header-inner,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner {
+    width: 1040px
+}
+
+@media screen and (max-width: 699px) {
+    .aui-page-focused .aui-page-header,.aui-page-focused .aui-page-panel,.aui-page-focused #footer .footer-body,.aui-page-fixed .aui-header-inner,.aui-page-fixed .aui-page-header-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-page-panel-inner,.aui-page-fixed #footer .footer-body,.aui-page-hybrid .aui-page-header,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-hybrid .aui-page-panel-inner,.aui-page-hybrid #footer .footer-body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 88%;
+    }
+    .aui-page-fixed .aui-header-inner,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner {
+        width: 100%;
+    }
+    .aui-page-panel-nav.adg-sidebar {
+        display: none;
+    }
+    .aui-group>.aui-item+.aui-item {
+        padding: 0;
+    }
+    .aui-group>.aui-item {
+        float: left;
+        margin-bottom: 20px;
+    }
+    .atlwdg-trigger.atlwdg-SUBTLE.feedbackCollector {
+        display: none;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .aui-group.principles-list > .aui-item+.aui-item {
+        padding-left: 0;
+    }
+    h1 {
+        line-height: 40px;
+    }
+    .home .aui-page-header-image, .aui-page-header-main, .aui-page-header-actions {
+        display: block;
+    }
+    .home .aui-page-header-main {
+        width: 100%;
+    }
+    .home .aui-header-before {
+        display: none;
+    }
+    .home .aui-quicksearch {
+        display: none;
+    }
+    .home .aui-page-header-hero .aui-page-header-main h1 {
+        margin-top: 0;
+        font-size: 32px;
+    }
+    .home .aui-page-header-actions {
+        padding-left: 0;
+        width: 240px;
+        margin: 0 auto 20px;
+    }
+    .aui-group>.aui-item:last-child {
+        margin-bottom: 0;
+    }
+    img.adg-principle-image {
+        width: 128px;
+        height: 128px;
+        margin: 40px auto 20px;
+        display: block;
+    }
+    img.adg-section-image {
+        width: 64px;
+        height: 64px;
+        margin: 40px auto 20px;
+        display: block;
+    }
+    hr {
+        display: none;
+    }
+    .aui-group.feature-list > .aui-item {
+        margin-bottom: 0;
+    }
+    .aui-group.feature-list > .aui-item {
+        padding: 0;
+    }
+    .aui-group.feature-list > .aui-item+.aui-item {
+        padding: 0;
+    }
+    .aui-group.feature-list > .aui-item+.aui-item+.aui-item {
+        padding: 0;
+    }
+    .aui-header {
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+    }
+    #content {
+        padding-top: 40px;
+    }
+    .aui-header .aui-dropdown2-trigger.active, .aui-header a:focus, .aui-header a:hover, .aui-header a:active {
+        background: none;
+    }
+    .aui-page-panel-content {
+        padding: 20px 0;
+    }
+    .aui-item.api-docs {
+        display: none;
+    }
+    .aui-avatar-personas, .aui-avatar-personas .aui-avatar-inner {
+        width: 140px;
+        height: 140px;
+        display: block;
+        margin: 0 auto;
+    }
+    .persona-image {
+        width: 100%;
+        padding-top: 20px;
+    }
+    .aui-item.persona-image {
+        margin-bottom: 0;
+    }
+    .example-thumbs img {
+        width: 100%;
+        height: 100%;
+        margin: 0 20px 20px 0;
+    }
+    #icon-font-table > .aui-group > .aui-item:nth-child(1), #icon-font-table > .aui-group > .aui-item:nth-child(3) {
+        clear: both;
+    }
+    #icon-font-table > .aui-group > .aui-item:nth-child(2) {
+        padding-left: 44px;
+    }
+    #icon-font-table > .aui-group > .aui-item:nth-child(4) {
+        padding-left: 30px;
+    }
+    .example-container.gray {
+        overflow: scroll;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 899px) {
+    .aui-page-focused .aui-page-header,.aui-page-focused .aui-page-panel,.aui-page-focused #footer .footer-body,.aui-page-fixed .aui-header-inner,.aui-page-fixed .aui-page-header-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-page-panel-inner,.aui-page-fixed #footer .footer-body,.aui-page-hybrid .aui-page-header,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-hybrid .aui-page-panel-inner,.aui-page-hybrid #footer .footer-body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .aui-page-fixed .aui-header-inner,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner {
+        width: 100%;
+    }
+    .aui-page-panel-nav.adg-sidebar {
+        display: none;
+    }
+    .aui-group>.aui-item+.aui-item {
+        padding: 0;
+    }
+    .aui-group>.aui-item {
+        float: left;
+        margin-bottom: 20px;
+    }
+    .aui-group.principles-list > .aui-item+.aui-item {
+        padding-left: 0;
+    }
+    .feature-image {
+        width: auto;
+        display: inline-block;
+    }
+    .aui-item.api-docs {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1099px) {
+    .aui-page-focused .aui-page-header,.aui-page-focused .aui-page-panel,.aui-page-focused #footer .footer-body,.aui-page-fixed .aui-header-inner,.aui-page-fixed .aui-page-header-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-page-panel-inner,.aui-page-fixed #footer .footer-body,.aui-page-hybrid .aui-page-header,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-hybrid .aui-page-panel-inner,.aui-page-hybrid #footer .footer-body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 820px;
+    }
+    .aui-page-fixed .aui-header-inner,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner {
+        width: 840px;
+    }
+    
+}
+
+@media screen and (min-width: 1100px) {
+    .aui-page-focused .aui-page-header,.aui-page-focused .aui-page-panel,.aui-page-focused #footer .footer-body,.aui-page-fixed .aui-header-inner,.aui-page-fixed .aui-page-header-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-page-panel-inner,.aui-page-fixed #footer .footer-body,.aui-page-hybrid .aui-page-header,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-hybrid .aui-page-panel-inner,.aui-page-hybrid #footer .footer-body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1020px;
+    }
+    .aui-page-fixed .aui-header-inner,.aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner,.aui-page-fixed .aui-navgroup-horizontal .aui-navgroup-inner {
+        width: 1040px;
+    }
+}
