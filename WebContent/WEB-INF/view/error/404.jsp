@@ -18,7 +18,7 @@
 			<div id="access-content">
 				<table class="default-table center">
 					<tr>
-						<td><span class="access-title"><spring:message code="main.not_found"/></span></td>
+						<td><span class="access-title">Not Found</span></td>
 					</tr>
 					<c:if test="${not empty error}">
 					<tr>
@@ -26,14 +26,14 @@
 					</tr>
 					<tr class="separator-tr"><td></td></tr>
 					<tr>
-						<td><span class="error-message" style="font-weight: bold; "><spring:message code="main.error"/>: </span>
+						<td><span class="error-message" style="font-weight: bold; ">Error: </span>
 						<span>${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}</span></td>
 					</tr>
 					</c:if>
 					<tr class="separator-tr"><td></td></tr>
 					<tr>
 						<c:if test="${sessionScope.online}">
-						<td><a class="link" href="home.html"><spring:message code="main.goto_home_page"/></a></td>
+						<td><a class="link" href="home.html">Goto Home Page</a></td>
 						</c:if>
 					</tr>
 				</table>
