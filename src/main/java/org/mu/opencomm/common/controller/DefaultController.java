@@ -17,11 +17,6 @@ public class DefaultController implements GenericController {
 		return new ModelAndView("home", model);
 	}
 
-	@RequestMapping(value = "home", method = RequestMethod.GET)
-	public ModelAndView homee() {
-		return new ModelAndView("home");
-	}
-
 	@RequestMapping(value = "home.html", method = RequestMethod.GET)
 	public ModelAndView home() {
 		return new ModelAndView("home");

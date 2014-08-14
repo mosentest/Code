@@ -2,6 +2,7 @@ package org.mu.opencomm.common.dbutil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.ParameterizedType;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -69,12 +70,12 @@ public class ClassMapper {
 					fieldName = getFieldName(field);
 					setterMapper.put(fieldName, classType.getMethod(setterName, fieldType));
 					getterMapper.put(classType.getMethod(getterName, new Class<?>[] {}), fieldName);
-					if (field.getType().isArray()) {
-						arrayMapper.put(fieldName, field.getClass().getComponentType());
-					}
-					if (DBUtil.isCollection(fieldType)) {
-						collectionMapper.put(fieldName, fieldType.getComponentType());
-					}
+					if (fieldType.isArray()) {
+						arrayMapper.put(fieldName, fieldType.getComponentType());
+					} else if (DBUtil.isCollection(fieldType)) {
+				        ParameterizedType stringListType = (ParameterizedType) field.getGenericType();
+						collectionMapper.put(fieldName, (Class<?>) stringListType.getActualTypeArguments()[0]);
+					} 
 					if (isComplexType(fieldType)) {
 						complextMapper.put(fieldName, fieldType);
 					}

@@ -12,14 +12,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/java/")
-public class JarController implements GenericController {
+public class JavaController implements GenericController {
 	
 	@Autowired
 	private JarFileService jarFileService;
 	
-	@RequestMapping(value = "libs.html", method = RequestMethod.GET)
-	public ModelAndView login(
+	@RequestMapping(value = "home.html", method = RequestMethod.GET)
+	public ModelAndView home(
 			@RequestParam(value = "pn", required = false) Integer pn,
+			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
+			ModelMap model) {
+		model.put("page", jarFileService.getJarFiles(pn, size));
+		return new ModelAndView("resource/libs", model);
+	}
+	
+	@RequestMapping(value = "libs.html", method = RequestMethod.GET)
+	public ModelAndView libs(
+			@RequestParam(value = "pn", required = false, defaultValue = "0") Integer pn,
 			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
 			ModelMap model) {
 		model.put("page", jarFileService.getJarFiles(pn, size));

@@ -30,4 +30,11 @@
 	</bean>  
 	
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" p:defaultEncoding="utf-8"/>
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="defaultHandler" ref="defaultController"/>
+	</bean>
+	
+	<mvc:annotation-driven/>
+	
 </beans>

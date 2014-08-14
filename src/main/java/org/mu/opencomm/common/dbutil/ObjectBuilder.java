@@ -1,5 +1,6 @@
 package org.mu.opencomm.common.dbutil;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +32,10 @@ public class ObjectBuilder {
 				Method method = mapper.getSetter(field);
 				if (mapper.isId(field)) {
 					method.invoke(entity, dbObject.get(field));
+				} else if (mapper.isArrayType(field)) {
+					BasicDBList list = (BasicDBList) dbObject.get(field);
+					Object array = getArray(list, mapper.getArrayType(field));
+					method.invoke(entity, array);
 				} else if (mapper.isCollectionType(field)) {
 					Class<?> type = mapper.getCollectionType(field);
 					BasicDBList dbList = (BasicDBList) dbObject.get(field);
@@ -49,9 +54,6 @@ public class ObjectBuilder {
 					}
 				} else if (mapper.isComplexType(field)) {
 					method.invoke(entity, buildEntity(mapper.getComplexeType(field), (DBObject) dbObject.get(field)));
-				} else if(mapper.isArrayType(field)) {
-					BasicDBList list = (BasicDBList) dbObject.get(field);
-					method.invoke(entity, getArray(list, mapper.getArrayType(field)));
 				} else {
 					method.invoke(entity, dbObject.get(field));
 				}
@@ -63,8 +65,8 @@ public class ObjectBuilder {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private <T> Object[] getArray(BasicDBList list, Class<T> field) {
-		return new Object[] { list.toArray((T[] )new Object[list.size()]) };
+	private <T> T[] getArray(BasicDBList list, Class<T> classType) {
+		return list.toArray((T[]) Array.newInstance(classType, list.size()));
 	}
 	
 	@SuppressWarnings("rawtypes")
