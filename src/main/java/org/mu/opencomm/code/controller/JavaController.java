@@ -1,7 +1,9 @@
 package org.mu.opencomm.code.controller;
 
+import org.mu.opencomm.code.entity.JarFile;
 import org.mu.opencomm.code.service.JarFileService;
 import org.mu.opencomm.common.controller.GenericController;
+import org.mu.opencomm.common.dbutil.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,7 +24,6 @@ public class JavaController implements GenericController {
 			@RequestParam(value = "pn", required = false) Integer pn,
 			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
 			ModelMap model) {
-		model.put("page", jarFileService.getJarFiles(pn, size));
 		return new ModelAndView("resource/libs", model);
 	}
 	
@@ -31,7 +32,8 @@ public class JavaController implements GenericController {
 			@RequestParam(value = "pn", required = false, defaultValue = "0") Integer pn,
 			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
 			ModelMap model) {
-		model.put("page", jarFileService.getJarFiles(pn, size));
+		Page<JarFile> jarFiles = jarFileService.getJarFiles(pn, size);
+		model.put("page", jarFiles);
 		return new ModelAndView("resource/libs", model);
 	}
 
