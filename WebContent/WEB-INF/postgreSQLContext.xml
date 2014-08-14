@@ -45,5 +45,5 @@
 		<property name="dataSource" ref="druid" />
 	</bean>
 
-	<import resource="classpath:dataSourceContext.xml" />
+	<import resource="dataSourceContext.xml" />
 </beans>

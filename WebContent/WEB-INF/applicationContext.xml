@@ -23,7 +23,7 @@
 		<constructor-arg value="org.mu.opencomm.entity;"/>
 	</bean>
 	
-	<import resource="classpath:postgreSQLContext.xml" />
+	<import resource="postgreSQLContext.xml" />
 	<!--<import resource="classpath:shiroContext.xml" />  -->
 	
 </beans>
