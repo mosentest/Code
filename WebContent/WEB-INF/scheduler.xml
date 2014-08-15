@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="tagScheduler" class="org.mu.opencomm.code.service.TagScheduler"/>  
+	<bean id="tagDailyScheduler" 
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+		<property name="targetObject">  
+			<ref bean="tagScheduler"/>  
+		</property>  
+		<property name="targetMethod">
+			<value>dailySchedule</value>  
+		</property>  
+	</bean>
+	
+	<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+		<property name="jobDetail" ref="tagDailyScheduler"/>  
+		<property name="cronExpression" value="0 58 23 * * ?"/><!-- triggers everyday at 23:58 -->
+	</bean>
+	
+	<bean id="SpringJobSchedulerFactoryBean" 
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+		<property name="triggers">  
+			<list>  
+				<ref bean="CronTriggerBean"/>  
+			</list>  
+		</property>  
+	</bean>   
+</beans>

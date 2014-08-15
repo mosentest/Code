@@ -15,6 +15,8 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.MapReduceCommand;
+import com.mongodb.MapReduceOutput;
 import com.mongodb.MongoClient;
 
 public abstract class AbstractRepository<T extends Identifiable, PK extends Serializable> 
@@ -42,6 +44,10 @@ public abstract class AbstractRepository<T extends Identifiable, PK extends Seri
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public MapReduceOutput mapReduce(DBCollection inputCollection, MapReduceCommand command) {
+		return inputCollection.mapReduce(command);
 	}
 
 	@Override

@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mu.opencomm.common.dbutil.ClassMapper;
 import org.mu.opencomm.common.dbutil.QueryParam;
 import org.mu.opencomm.common.entity.Identifiable;
 import org.slf4j.Logger;
@@ -20,7 +19,7 @@ import com.mongodb.gridfs.GridFSInputFile;
 public class AbstractFileRepository<T extends Identifiable, PK extends Serializable> 
 	extends AbstractRepository<T, PK> implements FileRepository {
 	
-	private static final Logger logger = LoggerFactory.getLogger(ClassMapper.class);
+	private static final Logger logger = LoggerFactory.getLogger(AbstractFileRepository.class);
 	
 	protected String bucket;
 	

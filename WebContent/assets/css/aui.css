@@ -55,7 +55,7 @@ body {
   font-family: Arial, sans-serif;
 }
 [lang|=ja] {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Verdana, Arial, sans-serif;
+  font-family: "Hiragino Kaku Gothic Pro", "銉掋儵銈儙瑙掋偞 Pro W3", "銉°偆銉偑", Meiryo, "锛汲 锛般偞銈枫儍銈�", Verdana, Arial, sans-serif;
 }
 /* Default margins */
 p,
@@ -1386,7 +1386,7 @@ input.aui-button.aui-dropdown2-trigger:after {
 }
 /* Placeholder styling
  * - You have to use two rules, because user agents are required to ignore a rule with an unknown selector.
- *   Since WebKit doesn’t know the proprietary Mozilla selector and vice versa, you have to include them separately.
+ *   Since WebKit doesn鈥檛 know the proprietary Mozilla selector and vice versa, you have to include them separately.
  *   See http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css#answer-2610741
  */
 .aui-header .aui-quicksearch input::-webkit-input-placeholder {
@@ -1935,6 +1935,9 @@ a:active {
 .aui-page-panel-nav {
   border-right: 1px solid #cccccc;
   width: 240px;
+}
+.sidebar-right, .sidebar-left {
+	width: 25% !important;
 }
 .aui-page-panel-sidebar {
   width: 35%;
@@ -3071,7 +3074,7 @@ form.aui .checkbox[disabled] {
 }
 /* Placeholder styling
  * - You have to use two rules, because user agents are required to ignore a rule with an unknown selector.
- *   Since WebKit doesn’t know the proprietary Mozilla selector and vice versa, you have to include them separately.
+ *   Since WebKit doesn鈥檛 know the proprietary Mozilla selector and vice versa, you have to include them separately.
  *   See http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css#answer-2610741
  */
 form.aui .text::-webkit-input-placeholder,
@@ -4119,7 +4122,7 @@ table.aui-zebra tr.aui-zebra th {
   padding-right: 26px;
   /* Placeholder styling
          * - You have to one rule per vendor because user agents are required to ignore a rule with an unknown selector.
-         *   Since WebKit doesn’t know the proprietary Mozilla selector and vice versa, you have to include them separately.
+         *   Since WebKit doesn鈥檛 know the proprietary Mozilla selector and vice versa, you have to include them separately.
          *   See http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css#answer-2610741
          */
 }
