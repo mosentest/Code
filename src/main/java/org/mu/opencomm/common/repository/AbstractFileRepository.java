@@ -11,6 +11,7 @@ import org.mu.opencomm.common.entity.Identifiable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.gridfs.GridFS;
 import com.mongodb.gridfs.GridFSDBFile;
@@ -49,6 +50,10 @@ public class AbstractFileRepository<T extends Identifiable, PK extends Serializa
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void deleteFiles() {
+		fileSystem.remove(new BasicDBObject());
 	}
 
 	@Override

@@ -8,6 +8,7 @@ import org.mu.opencomm.common.dbutil.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,12 +36,21 @@ public class JavaController implements GenericController {
 	public ModelAndView libs(
 			@RequestParam(value = "pn", required = false, defaultValue = "0") Integer pn,
 			@RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
+			@RequestParam(value = "tag", required = false) String tag,
 			ModelMap model) {
 		Page<JarFile> jarFiles = jarFileService.getJarFiles(pn, size);
 		model.put("page", jarFiles);
 		model.put("tags", tagService.getMostTagged("java"));
 		return new ModelAndView("resource/libs", model);
 	}
+	
+	@RequestMapping(value = "jar/{name}.html", method = RequestMethod.GET)
+	public ModelAndView library(@PathVariable("name") String name,
+			ModelMap model) {
+		model.put("jarFile", jarFileService.getJarFile(name));
+		return new ModelAndView("resource/library", model);
+	}
+	
 
 	public JarFileService getJarFileService() {
 		return jarFileService;

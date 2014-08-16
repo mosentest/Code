@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" 
+	version="2.0">
+	<description>SourceLib</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>sl</short-name>
+	<uri>http://www.source.com/lib</uri>
+	<tag>
+		<name>jarParser</name>
+		<tag-class>org.mu.opencomm.code.tag.JarParser</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>jarFile</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>org.mu.opencomm.code.entity.JarFile</type>
+		</attribute>
+	</tag>
+</taglib>  

@@ -67,9 +67,10 @@ public class ZipUtil {
 	private static List<FileInfo> parseFileInfo(List<FileInfo> files, List<FileInfo> dirs) {
 		List<FileInfo> list = new ArrayList<>();
 		for (FileInfo dir : dirs) {
-			list.add(dir);
 			dir.setName(dir.getPath());
 			dir.setFiles(new ArrayList<>());
+			list.add(dir);
+			
 			Iterator<FileInfo> it = files.iterator();
 			while (it.hasNext()) {
 				FileInfo info = it.next();
@@ -78,6 +79,22 @@ public class ZipUtil {
 					dir.getFiles().add(info);
 					dir.setNFiles(dir.getNFiles() + 1);
 					it.remove();
+				}
+			}
+		}
+		
+		Iterator<FileInfo> it = list.iterator();
+		while (it.hasNext()) {
+			FileInfo dir = it.next();
+			for (FileInfo directory : dirs) {
+				if (!dir.getPath().equals(directory.getPath()) && 
+						dir.getPath().startsWith(directory.getPath())) {
+					if (directory.getFiles() == null) {
+						directory.setFiles(new ArrayList<>());
+					}
+					directory.getFiles().add(dir);
+					it.remove();
+					break;
 				}
 			}
 		}

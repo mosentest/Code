@@ -17,7 +17,7 @@
     <aside class="aui-page-panel-sidebar sidebar-left">
       <h3>search/tags</h3>
       <c:forEach items="${tags}" var="tag">
-        <p><a href="#">${tag.tag}</a></p>
+        <p><a href="java/libs.html?tag=${tag.tag}">${tag.tag}</a></p>
       </c:forEach>
     </aside>
     <section class="aui-page-panel-content">
@@ -33,7 +33,7 @@
         <tbody>
            <c:forEach items="${page.content}" var="jarFile">
              <tr>
-               <td headers="name">${jarFile.name}</td>
+               <td headers="name"><a href="java/jar/${jarFile.name}.html">${jarFile.name}</a></td>
                <th id="type"></th>
                <th id="order"></th>
                <th id="action"></th>
