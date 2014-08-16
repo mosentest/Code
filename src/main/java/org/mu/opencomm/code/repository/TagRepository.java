@@ -2,6 +2,7 @@ package org.mu.opencomm.code.repository;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.mu.opencomm.code.entity.Tag;
@@ -25,6 +26,14 @@ public class TagRepository extends AbstractFileRepository<Tag, ObjectId> {
 		super("opencomm", "tag");
 		dailyCollection = db.getCollection("tag_daily_summary");
 		monthlyCollection = db.getCollection("tag_monthly_summary");
+	}
+	
+	public List<Tag> findByType(String type) {
+		return this.find(
+				new BasicDBObject("type", type), 
+				entityManager.getQueryField(classType, "minimal"), 
+				new BasicDBObject("nTags", -1),
+				0, 30);
 	}
 	
 	public boolean dailySchedule(Date date) {

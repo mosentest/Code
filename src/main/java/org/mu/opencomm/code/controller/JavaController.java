@@ -2,6 +2,7 @@ package org.mu.opencomm.code.controller;
 
 import org.mu.opencomm.code.entity.JarFile;
 import org.mu.opencomm.code.service.JarFileService;
+import org.mu.opencomm.code.service.TagService;
 import org.mu.opencomm.common.controller.GenericController;
 import org.mu.opencomm.common.dbutil.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class JavaController implements GenericController {
 	@Autowired
 	private JarFileService jarFileService;
 	
+	@Autowired
+	private TagService tagService;
+	
 	@RequestMapping(value = "home.html", method = RequestMethod.GET)
 	public ModelAndView home(
 			@RequestParam(value = "pn", required = false) Integer pn,
@@ -34,6 +38,7 @@ public class JavaController implements GenericController {
 			ModelMap model) {
 		Page<JarFile> jarFiles = jarFileService.getJarFiles(pn, size);
 		model.put("page", jarFiles);
+		model.put("tags", tagService.getMostTagged("java"));
 		return new ModelAndView("resource/libs", model);
 	}
 
@@ -43,6 +48,14 @@ public class JavaController implements GenericController {
 
 	public void setJarFileService(JarFileService jarFileService) {
 		this.jarFileService = jarFileService;
+	}
+
+	public TagService getTagService() {
+		return tagService;
+	}
+
+	public void setTagService(TagService tagService) {
+		this.tagService = tagService;
 	}
 	
 }

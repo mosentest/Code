@@ -5,9 +5,12 @@ import java.util.Date;
 import org.bson.types.ObjectId;
 import org.mu.opencomm.common.annotation.DBDocument;
 import org.mu.opencomm.common.annotation.DBField;
+import org.mu.opencomm.common.annotation.DBId;
 import org.mu.opencomm.common.annotation.DBIndexed;
 import org.mu.opencomm.common.annotation.DBQueries;
 import org.mu.opencomm.common.annotation.DBQuery;
+import org.mu.opencomm.common.annotation.DBQueryField;
+import org.mu.opencomm.common.annotation.DBQueryFields;
 import org.mu.opencomm.common.entity.Identifiable;
 
 @DBDocument(collection = "tag", autoIndexId = false)
@@ -15,8 +18,14 @@ import org.mu.opencomm.common.entity.Identifiable;
 	@DBQuery(name = "dateCompare", query = "{create:{$gte: ${start},lt:${end}}}"),
 	@DBQuery(name = "increment", query = "{$inc:{nTags:${increment}}}")
 })
+@DBQueryFields({
+	@DBQueryField(name = "minimal", fields = "{tag:1,nTags:1}")
+})
 public class Tag implements Identifiable {
 
+	@DBId
+	private ObjectId id;
+	
 	@DBField
 	@DBIndexed(unique = true)
 	private String tag;
@@ -32,7 +41,7 @@ public class Tag implements Identifiable {
 	
 	@Override
 	public ObjectId getId() {
-		return null;
+		return id;
 	}
 
 	public String getTag() {
@@ -65,6 +74,10 @@ public class Tag implements Identifiable {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public void setId(ObjectId id) {
+		this.id = id;
 	}
 
 }
