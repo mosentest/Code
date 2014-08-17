@@ -21,15 +21,24 @@ public class JarFile implements Identifiable {
 	@DBField
 	@DBIndexed(unique = true)
 	private String name;
+
+	@DBField
+	private String description;
 	
 	@DBField
 	private String project;
 
 	@DBField
-	private String[] labels;
+	private String[] category;
+	
+	@DBField
+	private String[] tags;
 	
 	@DBField
 	private String version;
+
+	@DBField
+	private long downloads;
 
 	@DBField
 	private List<FileInfo> contents;
@@ -82,11 +91,35 @@ public class JarFile implements Identifiable {
 		this.id = id;
 	}
 
-	public String[] getLabels() {
-		return labels;
+	public String[] getTags() {
+		return tags;
 	}
 
-	public void setLabels(String[] labels) {
-		this.labels = labels;
+	public void setTags(String[] tags) {
+		this.tags = tags;
+	}
+
+	public long getDownloads() {
+		return downloads;
+	}
+
+	public void setDownloads(long nDownloads) {
+		this.downloads = nDownloads;
+	}
+
+	public String[] getCategory() {
+		return category;
+	}
+
+	public void setCategory(String[] category) {
+		this.category = category;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

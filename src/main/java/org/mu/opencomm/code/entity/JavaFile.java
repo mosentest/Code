@@ -57,7 +57,7 @@ public class JavaFile extends CodeFile implements Identifiable {
 	private Date update;
 
 	@DBField
-	private String[] labels;
+	private String[] tags;
 
 	@DBField
 	@DBIndexed(-1)
@@ -138,12 +138,12 @@ public class JavaFile extends CodeFile implements Identifiable {
 		this.update = update;
 	}
 
-	public String[] getLabels() {
-		return labels;
+	public String[] getTags() {
+		return tags;
 	}
 
-	public void setLabels(String[] labels) {
-		this.labels = labels;
+	public void setTags(String[] tags) {
+		this.tags = tags;
 	}
 
 	public String getPath() {

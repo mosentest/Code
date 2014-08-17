@@ -41,7 +41,7 @@ public class ZipUtil {
 		InputStream in = new BufferedInputStream(new FileInputStream(file));  
         ZipInputStream zipIn = new ZipInputStream(in);
         ZipEntry entry;
-        jarFile.setLabels(new String[] { "java" });
+        jarFile.setTags(new String[] { "java" });
         jarFile.setName(file.substring(file.lastIndexOf("\\") + 1));
         while ((entry = zipIn.getNextEntry()) != null) {
         	FileInfo info = new FileInfo();
