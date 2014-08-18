@@ -13,6 +13,4 @@ public @interface DBField {
 
 	String value() default "";
 	
-	boolean complex() default false;
-	
 }

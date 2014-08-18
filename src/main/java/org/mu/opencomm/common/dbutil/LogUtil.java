@@ -54,7 +54,48 @@ public class LogUtil {
 		return log;
 	}
 
-	public static String generateLog(HttpServletRequest request, HttpServletResponse response, 
+	public static NCSALog generateLog(HttpServletRequest request, HttpServletResponse response) {
+		NCSALog log = new NCSALog();
+		RequestData requestData = new RequestData();
+		log.setRequest(requestData);
+		
+		StringBuffer buffer = new StringBuffer(160);
+		log.setRemotehost(request.getRemoteAddr());
+		log.setIdent("-");
+		String user = request.getRemoteUser();
+		log.setAuthuser((user == null) ? "-" : user);
+		log.setDate(null);
+		requestData.setMethod(request.getMethod());
+		requestData.setResource(request.getRequestURI());
+		requestData.setProtocol(request.getProtocol());
+		int status = response.getStatus();
+		buffer.append((char) ('0' + ((status / 100) % 10)));
+		buffer.append((char) ('0' + ((status / 10) % 10)));
+		buffer.append((char) ('0' + (status % 10)));
+		int responseLength = Integer.parseInt(response.getHeader("Content-Length"));
+		if (responseLength >= 0) {
+			buffer.append(' ');
+			if (responseLength > 99999) {
+				buffer.append(Integer.toString(responseLength));
+			} else {
+				if (responseLength > 9999)
+					buffer.append((char) ('0' + ((responseLength / 10000) % 10)));
+				if (responseLength > 999)
+					buffer.append((char) ('0' + ((responseLength / 1000) % 10)));
+				if (responseLength > 99)
+					buffer.append((char) ('0' + ((responseLength / 100) % 10)));
+				if (responseLength > 9)
+					buffer.append((char) ('0' + ((responseLength / 10) % 10)));
+				buffer.append((char) ('0' + (responseLength % 10)));
+			}
+			buffer.append(' ');
+		} else {
+			buffer.append(" - ");
+		}
+		return log;
+	}
+
+	public static String getLogString(HttpServletRequest request, HttpServletResponse response, 
 			int responseLength) {
 		StringBuffer buffer = new StringBuffer(160);
 

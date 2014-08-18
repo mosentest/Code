@@ -21,21 +21,23 @@ public class JarFile implements Identifiable {
 	@DBField
 	@DBIndexed(unique = true)
 	private String name;
+	
+	private static final String language = "Java";
 
 	@DBField
 	private String description;
 	
 	@DBField
 	private String project;
+	
+	@DBField
+	private String version;
 
 	@DBField
 	private String[] category;
 	
 	@DBField
 	private String[] tags;
-	
-	@DBField
-	private String version;
 
 	@DBField
 	private long downloads;
@@ -121,5 +123,9 @@ public class JarFile implements Identifiable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public static String getLanguage() {
+		return language;
 	}
 }

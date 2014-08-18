@@ -3,32 +3,28 @@ package org.mu.opencomm.common.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
+import org.mu.opencomm.code.repository.NCSALogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class AccessInterceptor implements HandlerInterceptor {
+public class AccessInterceptor extends HandlerInterceptorAdapter {
 
+	@Autowired
+	private NCSALogRepository ncsaLogRepository;
+	
 	@Override
-	public boolean preHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void postHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void afterCompletion(HttpServletRequest request,
-			HttpServletResponse response, Object handler, Exception ex)
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		// TODO Auto-generated method stub
-		
+		//ncsaLogRepository.save(LogUtil.generateLog(request, response));
+		return true;
+	}
+
+	public NCSALogRepository getNcsaLogRepository() {
+		return ncsaLogRepository;
+	}
+
+	public void setNcsaLogRepository(NCSALogRepository ncsaLogRepository) {
+		this.ncsaLogRepository = ncsaLogRepository;
 	}
 
 }

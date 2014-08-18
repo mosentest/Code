@@ -12,6 +12,7 @@
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+	<mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -35,6 +36,8 @@
 		<property name="defaultHandler" ref="defaultController"/>
 	</bean>
 	
-	<mvc:annotation-driven/>
+	<mvc:interceptors>
+		<bean class="org.mu.opencomm.common.interceptor.AccessInterceptor"/>
+	</mvc:interceptors> 
 	
 </beans>

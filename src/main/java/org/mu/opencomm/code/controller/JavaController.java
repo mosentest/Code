@@ -47,7 +47,11 @@ public class JavaController implements GenericController {
 	@RequestMapping(value = "jar/{name}.html", method = RequestMethod.GET)
 	public ModelAndView library(@PathVariable("name") String name,
 			ModelMap model) {
-		model.put("jarFile", jarFileService.getJarFile(name));
+		JarFile jarFile = jarFileService.getJarFile(name);
+		jarFile.setDescription("Description: " + jarFile.getName());
+		jarFile.setTags(new String[] { "Java", "Framework", "Jar" });
+		jarFile.setCategory(new String[] { "Java", "Framework", "Jar" });
+		model.put("jarFile", jarFile);
 		return new ModelAndView("resource/library", model);
 	}
 	

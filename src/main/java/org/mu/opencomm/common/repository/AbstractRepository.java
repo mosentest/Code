@@ -120,7 +120,7 @@ public abstract class AbstractRepository<T extends Identifiable, PK extends Seri
 
 	@Override
 	public boolean exists(PK id) {
-		return collection.findOne(new BasicDBObject("_id", id)) != null;
+		return collection.count(new BasicDBObject("_id", id)) != 0;
 	}
 
 	@Override

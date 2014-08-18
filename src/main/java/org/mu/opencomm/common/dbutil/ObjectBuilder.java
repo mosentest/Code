@@ -30,6 +30,9 @@ public class ObjectBuilder {
 			Set<String> fields = dbObject.keySet();
 			for (String field : fields) {
 				Method method = mapper.getSetter(field);
+				if (method == null) {
+					continue;
+				}
 				if (mapper.isId(field)) {
 					method.invoke(entity, dbObject.get(field));
 				} else if (mapper.isArrayType(field)) {

@@ -1,9 +1,19 @@
 .embedded-panel {
-	margin: 10px;
-	padding: 10px;
+	margin: 5px;
+	padding: 5px;
 	border: 1px solid #ccc;
-	background-color: #f5f5f5;
 	border-radius: 2px;
+}
+.embedded-panel-title {
+	border-bottom: 1px solid #ccc;
+}
+.embedded-panel-content {
+}
+table.info td.key {
+	color: black;
+}
+table.info td.value {
+	
 }
 .library-panel {
 	border: 1px solid #e5e5e5;
