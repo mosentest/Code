@@ -15,17 +15,14 @@ import org.mu.opencomm.common.entity.Identifiable;
 
 @DBDocument(collection = "tag", autoIndexId = false)
 @DBQueries({
-	@DBQuery(name = "dateCompare", query = "{create:{$gte: ${start},lt:${end}}}"),
-	@DBQuery(name = "increment", query = "{$inc:{nTags:${increment}}}")
-})
-@DBQueryFields({
-	@DBQueryField(name = "minimal", fields = "{tag:1,nTags:1}")
-})
+		@DBQuery(name = "dateCompare", query = "{create:{$gte: ${start},lt:${end}}}"),
+		@DBQuery(name = "increment", query = "{$inc:{nTags:${increment}}}") })
+@DBQueryFields({ @DBQueryField(name = "minimal", fields = "{tag:1,nTags:1}") })
 public class Tag implements Identifiable {
 
 	@DBId
 	private ObjectId id;
-	
+
 	@DBField
 	@DBIndexed(unique = true)
 	private String tag;
@@ -38,7 +35,7 @@ public class Tag implements Identifiable {
 
 	@DBField
 	private String type;
-	
+
 	@Override
 	public ObjectId getId() {
 		return id;
@@ -78,6 +75,12 @@ public class Tag implements Identifiable {
 
 	public void setId(ObjectId id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Tag [id=" + id + ", tag=" + tag + ", nTags=" + nTags
+				+ ", date=" + date + ", type=" + type + "]";
 	}
 
 }
