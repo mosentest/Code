@@ -18,14 +18,14 @@
   <link rel="stylesheet" href="assets/css/aui-design.css" media="all">
   <link rel="stylesheet" href="assets/css/source.css" media="all">
   <!--自定义样式-->
-  <link rel="stylesheet" type="text/css" href="assets/css/ziqi.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/common.css"/>
   <script src="assets/js/jquery-2.0.3.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script> 
   <script src="assets/js/hunter.js"></script>
   <script src="assets/js/aui.js"></script>
   <script src="assets/js/aui-experimental.js"></script>
   <!--自定义javascript-->
-  <script src="assets/js/ziqi.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="aui-layout aui-theme-default" data-aui-version="5.5.1">
 <jsp:include page="login.jsp"></jsp:include>
