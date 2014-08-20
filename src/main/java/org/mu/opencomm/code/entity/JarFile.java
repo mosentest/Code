@@ -1,5 +1,6 @@
 package org.mu.opencomm.code.entity;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -17,25 +18,25 @@ public class JarFile implements Identifiable {
 
 	@DBField
 	private User uploader;
-	
+
 	@DBField
 	@DBIndexed(unique = true)
 	private String name;
-	
+
 	private static final String language = "Java";
 
 	@DBField
 	private String description;
-	
+
 	@DBField
 	private String project;
-	
+
 	@DBField
 	private String version;
 
 	@DBField
 	private String[] category;
-	
+
 	@DBField
 	private String[] tags;
 
@@ -44,7 +45,7 @@ public class JarFile implements Identifiable {
 
 	@DBField
 	private List<FileInfo> contents;
-	
+
 	public ObjectId getId() {
 		return id;
 	}
@@ -127,5 +128,14 @@ public class JarFile implements Identifiable {
 
 	public static String getLanguage() {
 		return language;
+	}
+
+	@Override
+	public String toString() {
+		return "JarFile [id=" + id + ", uploader=" + uploader + ", name="
+				+ name + ", description=" + description + ", project="
+				+ project + ", version=" + version + ", category="
+				+ Arrays.toString(category) + ", tags=" + Arrays.toString(tags)
+				+ ", downloads=" + downloads + ", contents=" + contents + "]";
 	}
 }

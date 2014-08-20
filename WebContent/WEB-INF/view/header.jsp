@@ -17,13 +17,18 @@
   <link rel="stylesheet" href="assets/css/aui-experimental.css" media="all">
   <link rel="stylesheet" href="assets/css/aui-design.css" media="all">
   <link rel="stylesheet" href="assets/css/source.css" media="all">
+  <!--自定义样式-->
+  <link rel="stylesheet" type="text/css" href="assets/css/ziqi.css"/>
   <script src="assets/js/jquery-2.0.3.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script> 
   <script src="assets/js/hunter.js"></script>
   <script src="assets/js/aui.js"></script>
   <script src="assets/js/aui-experimental.js"></script>
+  <!--自定义javascript-->
+  <script src="assets/js/ziqi.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body class="aui-layout aui-theme-default" data-aui-version="5.5.1">
+<jsp:include page="login.jsp"></jsp:include>
 <header id="header" role="banner">
   <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
     <div class="aui-header-inner">
@@ -104,7 +109,7 @@
             </li>
           </c:if>
           <c:if test="${not sessionScope.online}">
-            <li><a href="#">Login</a></li>
+            <li><a href="javascript:openLogin();">Login</a></li>
           </c:if>
           <li style="display: none;"><a href="#" id="aui-responsive-header-layer-trigger-2" class="aui-responsive-header-layer-trigger" tabindex="0"><span class="aui-icon aui-icon aui-icon-small aui-iconfont-appswitcher">menu </span></a></li>
         </ul>

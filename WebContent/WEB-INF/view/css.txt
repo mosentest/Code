@@ -1,0 +1,13 @@
+  <style type="text/css">
+    #header {
+      position:fixed;
+      _position:absolute; /* for IE6 */
+      width:100%;
+      top:0px;
+      left:0px;
+      _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
+      overflow:visible;
+    }
+  </style>
+  
+  不知道用不到,暂时放在这里

@@ -17,13 +17,16 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/java/")
 public class JavaController implements GenericController {
-	
+
+	private final static int PN = 1;
+	private final static int SIZE = 5;
+
 	@Autowired
 	private JarFileService jarFileService;
-	
+
 	@Autowired
 	private TagService tagService;
-	
+
 	@RequestMapping(value = "home.html", method = RequestMethod.GET)
 	public ModelAndView home(
 			@RequestParam(value = "pn", required = false) Integer pn,
@@ -31,7 +34,7 @@ public class JavaController implements GenericController {
 			ModelMap model) {
 		return new ModelAndView("resource/libs", model);
 	}
-	
+
 	@RequestMapping(value = "libs.html", method = RequestMethod.GET)
 	public ModelAndView libs(
 			@RequestParam(value = "pn", required = false, defaultValue = "0") Integer pn,
@@ -39,11 +42,14 @@ public class JavaController implements GenericController {
 			@RequestParam(value = "tag", required = false) String tag,
 			ModelMap model) {
 		Page<JarFile> jarFiles = jarFileService.getJarFiles(pn, size);
+		// 假设获取下载列表
+		Page<JarFile> downloadJarFiles = jarFileService.getJarFiles(PN, SIZE);
+		model.put("downloadJarFiles", downloadJarFiles);
 		model.put("page", jarFiles);
 		model.put("tags", tagService.getMostTagged("java"));
 		return new ModelAndView("resource/libs", model);
 	}
-	
+
 	@RequestMapping(value = "jar/{name}.html", method = RequestMethod.GET)
 	public ModelAndView library(@PathVariable("name") String name,
 			ModelMap model) {
@@ -54,7 +60,6 @@ public class JavaController implements GenericController {
 		model.put("jarFile", jarFile);
 		return new ModelAndView("resource/library", model);
 	}
-	
 
 	public JarFileService getJarFileService() {
 		return jarFileService;
@@ -71,5 +76,5 @@ public class JavaController implements GenericController {
 	public void setTagService(TagService tagService) {
 		this.tagService = tagService;
 	}
-	
+
 }

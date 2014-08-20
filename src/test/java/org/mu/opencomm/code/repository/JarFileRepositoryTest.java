@@ -3,6 +3,8 @@ package org.mu.opencomm.code.repository;
 import javax.annotation.Resource;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 测试JarFileRepository下的方法
@@ -11,6 +13,9 @@ import org.junit.Test;
  *
  */
 public class JarFileRepositoryTest extends BaseRepositoryTest {
+	private static final Logger logger = LoggerFactory
+			.getLogger(JarFileRepositoryTest.class);
+
 	private JarFileRepository JarFileRepository;
 
 	public JarFileRepository getJarFileRepository() {

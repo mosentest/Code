@@ -21,30 +21,134 @@
       </c:forEach>
     </aside>
     <section class="aui-page-panel-content">
-      <table class="aui">
-        <thead>
-          <tr>
-            <th id="name">Name</th>
-            <th id="type"></th>
-            <th id="order"></th>
-            <th id="action"></th>
-          </tr>
-        </thead>
-        <tbody>
-           <c:forEach items="${page.content}" var="jarFile">
-             <tr>
-               <td headers="name"><a href="java/jar/${jarFile.name}.html">${jarFile.name}</a></td>
-               <th id="type"></th>
-               <th id="order"></th>
-               <th id="action"></th>
-             </tr>
-           </c:forEach>
-         </tbody>
-      </table>
+        <div class="sections recommend-repos">
+          <h2 class="recommend-heading">
+            <span class="more"><a href="#">more»</a></span>
+            latest
+          </h2>
+          <ul class="repo-list">
+          <c:forEach items="${page.content}" var="jarFile">
+              <li>
+                <h3>
+                  <a href="java/jar/${jarFile.name}.html" target="_blank">${jarFile.name}</a>
+                  <span class="uploader">
+                    <c:choose>
+                      <c:when test="${jarFile.uploader !=null}">${jarFile.uploader }</c:when>
+                      <c:otherwise>unknow uploader</c:otherwise>
+                    </c:choose>
+                  </span>
+                  <p class="description">
+                    <c:choose>
+                      <c:when test="${jarFile.description !=null}">${jarFile.description }</c:when>
+                      <c:otherwise>unkonw description</c:otherwise>
+                    </c:choose>
+                  </p>
+                </h3>
+              </li>
+            </c:forEach>
+          </ul>
+        </div>
     </section>
     <aside class="aui-page-panel-sidebar sidebar-right">
       <h3>most downloaded</h3>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+        <!--选项卡-->
+        <div class="aui-tabs horizontal-tabs" id="tabs-example1" role="appliaction">
+          <ul class="tabs-menu" role="tablist">
+            <!--第一个选项-->
+            <li class="menu-item active-tab" role="presentation">
+                <a href="#tabs-example-first" id="aui-uid-0" role="tab">
+                      <strong>Today</strong>
+                </a>
+             </li>
+             <!--第二个选项-->
+             <li class="menu-item" role="presentation">
+                <a href="#tabs-example-second" id="aui-uid-1" role="tab">
+                      <strong>Week</strong>
+                </a>
+              </li>
+              <!--第三个选项-->
+              <li class="menu-item" role="presentation">
+                <a href="#tabs-example-third" id="aui-uid-2" role="tab">
+                      <strong>Month</strong>
+                </a>
+              </li>
+          </ul>
+          <!--第一个选项卡内容-->
+                <div class="tabs-pane active-pane" id="tabs-example-first" role="tabpanel" aria-labelledby="aui-uid-0">
+                  <h3 style="color: #f95844;">Today</h3>
+                  <table class="aui">
+                    <thead>
+                      <tr>
+                        <th id="name"> name </th>
+                        <th id="download"> download</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${downloadJarFiles.content }" var="downlaodJarFile">
+                      <tr>
+                        <td headers="name"><a href="java/jar/${downlaodJarFile.name}.html">${downlaodJarFile.name}</a></td>
+                        <td headers="download">
+                        <c:choose>
+                          <c:when test="${downloadJarFile.download  == null}">0</c:when>
+                          <c:otherwise>${downloadJarFile.download}</c:otherwise>
+                        </c:choose>
+                        </td>
+                      </tr>
+                      </c:forEach>
+                    </tbody>
+                  </table>
+                </div><!--tabs-example-first-->
+          <!--第二个选项卡内容-->
+                <div class="tabs-pane" id="tabs-example-second" role="tabpanel" aria-labelledby="aui-uid-1">
+                  <h3 style="color: #f95844;">Week</h3>
+                  <table class="aui">
+                    <thead>
+                      <tr>
+                        <th id="name"> name </th>
+                        <th id="download"> download</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${downloadJarFiles.content }" var="downlaodJarFile">
+                      <tr>
+                        <td headers="name"><a href="java/jar/${downlaodJarFile.name}.html">${downlaodJarFile.name}</a></td>
+                        <td headers="download">
+                          <c:choose>
+                          <c:when test="${downloadJarFile.download  == null}">0.0</c:when>
+                          <c:otherwise>${downloadJarFile.download}</c:otherwise>
+                        </c:choose>
+                        </td>
+                      </tr>
+                      </c:forEach>
+                    </tbody>
+                  </table>
+                </div><!--tabs-example-second-->
+          <!--第三个选项卡内容-->
+                <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-labelledby="aui-uid-2">
+                  <h3 style="color: #f95844;">Month</h3>
+                  <table class="aui">
+                    <thead>
+                      <tr>
+                        <th id="name"> name </th>
+                        <th id="download"> download</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${downloadJarFiles.content }" var="downlaodJarFile">
+                      <tr>
+                        <td headers="name"><a href="java/jar/${downlaodJarFile.name}.html">${downlaodJarFile.name}</a></td>
+                        <td headers="download">
+                         <c:choose>
+                          <c:when test="${downloadJarFile.download  == null}">00</c:when>
+                          <c:otherwise>${downloadJarFile.download}</c:otherwise>
+                        </c:choose>
+                        </td>
+                      </tr>
+                      </c:forEach>
+                    </tbody>
+                  </table>
+                </div><!--tabs-example-third-->
+      </div><!-- // .aui-tabs -->
     </aside>
   </div>
 </div>
