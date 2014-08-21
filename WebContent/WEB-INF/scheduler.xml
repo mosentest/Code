@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	<bean id="tagScheduler" class="org.mu.opencomm.code.service.TagScheduler"/>  
-	<bean id="tagDailyScheduler" 
-		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
-		<property name="targetObject">  
-			<ref bean="tagScheduler"/>  
-		</property>  
+	<!-- 要调用的工作类 -->
+	<bean id="tagScheduler" class="org.mu.opencomm.code.service.TagScheduler" />
+	<!-- 定义调用对象和调用对象的方法 -->
+	<bean id="tagDailyScheduler"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 调用的类 -->
+		<property name="targetObject">
+			<ref bean="tagScheduler" />
+		</property>
+		<!-- 调用类中的方法 -->
 		<property name="targetMethod">
-			<value>dailySchedule</value>  
-		</property>  
+			<value>dailySchedule</value>
+		</property>
 	</bean>
-	
-	<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">  
-		<property name="jobDetail" ref="tagDailyScheduler"/>  
-		<property name="cronExpression" value="0 58 23 * * ?"/><!-- triggers everyday at 23:58 -->
+	<!-- 定义触发时间 -->
+	<bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="tagDailyScheduler" />
+		<!-- cron表达式 -->
+		<property name="cronExpression" value="0 58 23 * * ?" />
+		<!-- triggers everyday at 23:58 -->
 	</bean>
-	
-	<bean id="SpringJobSchedulerFactoryBean" 
-		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
-		<property name="triggers">  
-			<list>  
-				<ref bean="CronTriggerBean"/>  
-			</list>  
-		</property>  
-	</bean>   
+	<!-- 总管理类 如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+	<bean id="SpringJobSchedulerFactoryBean"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="CronTriggerBean" />
+			</list>
+		</property>
+		<property name="taskExecutor" ref="executor"></property>
+	</bean>
+
+	<!-- 线程执行器配置，用于任务注册 -->
+	<bean id="executor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="10" />
+		<property name="maxPoolSize" value="100" />
+		<property name="queueCapacity" value="500" />
+	</bean>
 </beans>

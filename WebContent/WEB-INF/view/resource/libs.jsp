@@ -14,16 +14,25 @@
 </header>
 <div class="aui-page-panel">
   <div class="aui-page-panel-inner">
-    <aside class="aui-page-panel-sidebar sidebar-left">
-      <h3>search/tags</h3>
-      <c:forEach items="${tags}" var="tag">
-        <p><a href="java/libs.html?tag=${tag.tag}">${tag.tag}</a></p>
-      </c:forEach>
-    </aside>
+    <aside class="aui-page-panel-sidebar sidebar-left adg-sidebar">
+      <nav class="aui-navgroup aui-navgroup-vertical" style="margin-top: 0px;">
+        <div class="aui-navgroup-inner stalking-position">
+          <div class="aui-navgroup-primary">
+            <ul class="aui-nav __skate">
+               <div class="aui-nav-heading">search/tags</div>
+                <c:forEach items="${tags}" var="tag">
+               <li><a href="java/libs.html?tag=${tag.tag}">${tag.tag}</a></li>
+               </c:forEach>
+            </ul>
+          </div><!--.aui-navgroup-primary  -->
+        </div><!--.aui-navgroup-inner  -->
+      </nav>
+    </aside><!--.aui-page-panel-sidebar  -->
     <section class="aui-page-panel-content">
         <div class="sections recommend-repos">
           <h2 class="recommend-heading">
             <span class="more"><a href="#">more»</a></span>
+            <span class="aui-icon aui-icon-small aui-iconfont-homepage"></span>
             latest
           </h2>
           <ul class="repo-list">
@@ -33,13 +42,13 @@
                   <a href="java/jar/${jarFile.name}.html" target="_blank">${jarFile.name}</a>
                   <span class="uploader">
                     <c:choose>
-                      <c:when test="${jarFile.uploader !=null}">${jarFile.uploader }</c:when>
+                      <c:when test="${!empty jarFile.uploader}">${jarFile.uploader }</c:when>
                       <c:otherwise>unknow uploader</c:otherwise>
                     </c:choose>
                   </span>
                   <p class="description">
                     <c:choose>
-                      <c:when test="${jarFile.description !=null}">${jarFile.description }</c:when>
+                      <c:when test="${!empty  jarFile.description}">${jarFile.description }</c:when>
                       <c:otherwise>unkonw description</c:otherwise>
                     </c:choose>
                   </p>
@@ -50,7 +59,7 @@
         </div>
     </section>
     <aside class="aui-page-panel-sidebar sidebar-right">
-      <h3>most downloaded</h3>
+      <div class="aui-nav-heading">most downloaded</div>
         <!--选项卡-->
         <div class="aui-tabs horizontal-tabs" id="tabs-example1" role="appliaction">
           <ul class="tabs-menu" role="tablist">

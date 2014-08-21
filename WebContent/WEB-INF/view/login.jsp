@@ -4,7 +4,7 @@
 <div id="fullbg"></div>
 <div id="login">
   <p class="close">
-    <a href="javascript:;" onclick="closeLogin();"> x </a>
+    <a href="javascript:closeLogin();"> x </a>
   </p>
   <section class="aui-page-panel-content">
     <h2>Log in to [Java repository]</h2>

@@ -14,11 +14,12 @@ import org.mu.opencomm.common.annotation.DBQuery;
 import org.mu.opencomm.common.annotation.DBQueryField;
 import org.mu.opencomm.common.annotation.DBQueryFields;
 import org.mu.opencomm.common.entity.Identifiable;
-
+//1就是正序,-1就是倒序
 @DBDocument(collection = "java_file", compoundIndexes = {
 		@DBCompoundIndex(def = "{name : 1, extension : -1}"),
 		@DBCompoundIndex(def = "{lines : 1, size : -1}")
 })
+//这个就相当于 size > 参数
 @DBQueries({
 	@DBQuery(name = "test1", query = "{ size : { $gt : ${size} }}"),
 	@DBQuery(name = "test2", query = "{ size : { $gt : 50 }, user.account : '123'}")

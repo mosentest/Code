@@ -85,5 +85,12 @@ public class FileInfo {
 	public void setPath(String path) {
 		this.path = path;
 	}
+
+	@Override
+	public String toString() {
+		return "FileInfo [name=" + name + ", size=" + size + ", extension="
+				+ extension + ", isDir=" + isDir + ", path=" + path
+				+ ", nFiles=" + nFiles + ", files=" + files + "]";
+	}
 	
 }

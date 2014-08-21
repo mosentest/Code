@@ -26,6 +26,7 @@
   <script src="assets/js/aui-experimental.js"></script>
   <!--自定义javascript-->
   <script src="assets/js/common.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/d3.min.js" charset="utf-8"></script>
 </head>
 <body class="aui-layout aui-theme-default" data-aui-version="5.5.1">
 <jsp:include page="login.jsp"></jsp:include>
